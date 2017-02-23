@@ -8,6 +8,6 @@ import retrofit2.http.GET;
 
 public interface ApiService {
 
-    @GET("3/movie/{movie_type}")
+    @GET("bins/7ky91")
     Call<ArrayList<Category>> getCategories();
 }

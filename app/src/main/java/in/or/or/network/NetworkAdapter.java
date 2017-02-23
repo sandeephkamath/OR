@@ -5,6 +5,7 @@ import android.content.Context;
 import java.util.ArrayList;
 
 import in.or.or.model.Category;
+import retrofit2.Call;
 
 public class NetworkAdapter {
     private static NetworkAdapter INSTANCE;
@@ -24,6 +25,7 @@ public class NetworkAdapter {
     }
 
     public void getCategories(ResponseCallback<ArrayList<Category>> responseCallback) {
-
+        Call<ArrayList<Category>> call = mApiService.getCategories();
+        call.enqueue(responseCallback);
     }
 } 
