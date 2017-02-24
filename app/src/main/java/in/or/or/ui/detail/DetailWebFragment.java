@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+
 
 import in.or.or.R;
 import in.or.or.model.Category;
@@ -15,6 +17,7 @@ public class DetailWebFragment extends Fragment {
     private static final String ARG_CATEGORY = "category";
 
     private Category category;
+    private WebView detailWebView;
 
     public DetailWebFragment() {
         // Required empty public constructo
@@ -41,7 +44,10 @@ public class DetailWebFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sub_category_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_sub_category_list, container, false);
+        detailWebView = (WebView) view.findViewById(R.id.webview);
+        detailWebView.loadUrl(category.getLink());
+        return view;
     }
 
 

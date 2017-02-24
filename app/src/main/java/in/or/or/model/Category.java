@@ -40,6 +40,10 @@ public class Category implements Parcelable {
         return title;
     }
 
+    public String getLink() {
+        return link;
+    }
+
     public String getBanner() {
         return banner;
     }
